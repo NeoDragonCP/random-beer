@@ -86,7 +86,6 @@ function App() {
       setBeerDescription(data.description);
       //console.log(data); // log out the final request result
       setIsLoading(false);
-      setDoGetBeer(true);
     } catch (error) {
       setErrorFetching(true);
       setIsLoading(false);
