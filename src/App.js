@@ -5,7 +5,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams,
+  useHistory,
 } from "react-router-dom";
 
 // * * *
@@ -56,7 +56,8 @@ function App() {
   const [brewery, setBrewery] = useState({});
   const [breweryPageData, setBreweryPageData] = useState({});
   const [category, setCategory] = useState("");
-  const [showMoreDetails, setShowMoreDetails] = useState(false);
+
+  const history = useHistory();
 
   const fetchBeerData = useCallback(async () => {
     setIsLoading(true);
@@ -118,14 +119,12 @@ function App() {
     fetchBeerData();
   }
 
-  function handleShowMoreInfo() {
-    setShowMoreDetails(!showMoreDetails);
+  function handleClickShowBrewery() {
+    //history.push("/");
   }
 
-  function handleClickShowBrewery() {}
-
   return (
-    <Router>
+    <Router history={history}>
       <div className="App">
         <Header>
           <h2>The Random Beer App</h2>
@@ -141,6 +140,7 @@ function App() {
             }
           />
           <Route
+            exact
             path="/"
             children={
               <BeerPage
@@ -151,8 +151,9 @@ function App() {
                 beerDescription={beerDescription}
                 category={category}
                 handleClickNewBeer={handleClickNewBeer}
-                handleShowMoreInfo={handleShowMoreInfo}
+                handleShowMoreInfo={handleClickShowBrewery}
                 error={errorFetching}
+                history={history}
               />
             }
           />

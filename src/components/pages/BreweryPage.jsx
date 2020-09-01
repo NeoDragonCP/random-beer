@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import Button from "../micro/Button";
 import ExtraDetails from "../micro/ExtraDetails";
