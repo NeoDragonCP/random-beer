@@ -95,7 +95,7 @@ export default function BreweryPage({ brewery, fetchCallback }) {
             </div>
           ) : (
             <div className="extraDetailsItem">
-              <span>Operating</span>
+              <span>Verified</span>
               <i className="fas fa-thumbs-down"></i>
             </div>
           )}
