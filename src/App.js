@@ -25,8 +25,8 @@ const apiKey = "a5c1b917e7ba62dcd79f434ed73bc72d";
 
 // Helper Functions
 function appendURLWithCors(url) {
-  //return `https://cors-anywhere.herokuapp.com/${url}`;
-  return `https://thingproxy.freeboard.io/fetch/${url}`;
+  return `https://cors-anywhere.herokuapp.com/${url}`;
+  //return `https://thingproxy.freeboard.io/fetch/${url}`;
   //return `http://alloworigin.com/get?url=${url}`;
 }
 
