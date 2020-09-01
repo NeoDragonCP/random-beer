@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/random-beer/static/css/main.eb40cd2e.chunk.css",
-    "main.js": "/random-beer/static/js/main.53f9fcc4.chunk.js",
-    "main.js.map": "/random-beer/static/js/main.53f9fcc4.chunk.js.map",
+    "main.js": "/random-beer/static/js/main.fa0e6d69.chunk.js",
+    "main.js.map": "/random-beer/static/js/main.fa0e6d69.chunk.js.map",
     "runtime-main.js": "/random-beer/static/js/runtime-main.aead2894.js",
     "runtime-main.js.map": "/random-beer/static/js/runtime-main.aead2894.js.map",
     "static/js/2.5ab9b575.chunk.js": "/random-beer/static/js/2.5ab9b575.chunk.js",
     "static/js/2.5ab9b575.chunk.js.map": "/random-beer/static/js/2.5ab9b575.chunk.js.map",
     "index.html": "/random-beer/index.html",
-    "precache-manifest.34d557c0cd458a91c3d7037ad48f3c6e.js": "/random-beer/precache-manifest.34d557c0cd458a91c3d7037ad48f3c6e.js",
+    "precache-manifest.55af16c443d20396df32e94ff49d0f10.js": "/random-beer/precache-manifest.55af16c443d20396df32e94ff49d0f10.js",
     "service-worker.js": "/random-beer/service-worker.js",
     "static/css/main.eb40cd2e.chunk.css.map": "/random-beer/static/css/main.eb40cd2e.chunk.css.map",
     "static/js/2.5ab9b575.chunk.js.LICENSE.txt": "/random-beer/static/js/2.5ab9b575.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.aead2894.js",
     "static/js/2.5ab9b575.chunk.js",
     "static/css/main.eb40cd2e.chunk.css",
-    "static/js/main.53f9fcc4.chunk.js"
+    "static/js/main.fa0e6d69.chunk.js"
   ]
 }
