@@ -1,6 +1,12 @@
 import React, { useState, useCallback } from "react";
 import "./App.css"; /* Generic styling */
 import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams,
+} from "react-router-dom";
 
 // * * *
 // Pages
@@ -116,31 +122,43 @@ function App() {
     setShowMoreDetails(!showMoreDetails);
   }
 
+  function handleClickShowBrewery() {}
+
   return (
-    <div className="App">
-      <Header>
-        <h2>The Random Beer App</h2>
-      </Header>
-      <BeerPage
-        isLoading={isLoading}
-        fetchCallback={fetchBeerData}
-        beer={randomBeer}
-        brewery={brewery}
-        beerDescription={beerDescription}
-        category={category}
-        handleClickNewBeer={handleClickNewBeer}
-        handleShowMoreInfo={handleShowMoreInfo}
-        error={errorFetching}
-      />
-      {isLoading !== true ? (
-        <BreweryPage
-          brewery={breweryPageData}
-          fetchCallback={fetchBreweryData}
-        />
-      ) : (
-        <React.Fragment />
-      )}
-    </div>
+    <Router>
+      <div className="App">
+        <Header>
+          <h2>The Random Beer App</h2>
+        </Header>
+        <Switch>
+          <Route
+            path="/brewery"
+            children={
+              <BreweryPage
+                brewery={breweryPageData}
+                fetchCallback={fetchBreweryData}
+              />
+            }
+          />
+          <Route
+            path="/"
+            children={
+              <BeerPage
+                isLoading={isLoading}
+                fetchCallback={fetchBeerData}
+                beer={randomBeer}
+                brewery={brewery}
+                beerDescription={beerDescription}
+                category={category}
+                handleClickNewBeer={handleClickNewBeer}
+                handleShowMoreInfo={handleShowMoreInfo}
+                error={errorFetching}
+              />
+            }
+          />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

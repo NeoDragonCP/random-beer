@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Button from "../micro/Button";
 import ExtraDetails from "../micro/ExtraDetails";
@@ -100,13 +101,15 @@ export default function BreweryPage({ brewery, fetchCallback }) {
           )}
         </ExtraDetails>
       </Card>
-      <Button>
-        <i
-          className="fas fa-chevron-left"
-          style={{ marginRight: "0.5rem" }}
-        ></i>
-        Back
-      </Button>
+      <Link to="/">
+        <Button>
+          <i
+            className="fas fa-chevron-left"
+            style={{ marginRight: "0.5rem" }}
+          ></i>
+          Back
+        </Button>
+      </Link>
     </BasePageStyle>
   );
 }

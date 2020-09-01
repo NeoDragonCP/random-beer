@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import Button from "./micro/Button";
 import Bottle from "./Bottle";
@@ -178,14 +179,15 @@ export default function BeerCard({
             ) : (
               <React.Fragment />
             )}
-            <MoreDetailsButton
-              onClick={() => {
-                if (checkFunctionExists(handleClick)) handleClick();
-              }}
-            >
-              Brewery Info <i className="fas fa-angle-right"></i>
-            </MoreDetailsButton>
-
+            <Link to="/brewery">
+              <MoreDetailsButton
+                onClick={() => {
+                  if (checkFunctionExists(handleClick)) handleClick();
+                }}
+              >
+                Brewery Info <i className="fas fa-angle-right"></i>
+              </MoreDetailsButton>
+            </Link>
             {showDescription === true && description.length >= 1 ? (
               <React.Fragment>
                 <MoreDetailsButton
