@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/random-beer/static/css/main.eb40cd2e.chunk.css",
+    "main.js": "/random-beer/static/js/main.b5bc8098.chunk.js",
+    "main.js.map": "/random-beer/static/js/main.b5bc8098.chunk.js.map",
+    "runtime-main.js": "/random-beer/static/js/runtime-main.aead2894.js",
+    "runtime-main.js.map": "/random-beer/static/js/runtime-main.aead2894.js.map",
+    "static/js/2.56dfac82.chunk.js": "/random-beer/static/js/2.56dfac82.chunk.js",
+    "static/js/2.56dfac82.chunk.js.map": "/random-beer/static/js/2.56dfac82.chunk.js.map",
+    "index.html": "/random-beer/index.html",
+    "precache-manifest.e36fc408a0a39f227b39a7f3f64aaa1f.js": "/random-beer/precache-manifest.e36fc408a0a39f227b39a7f3f64aaa1f.js",
+    "service-worker.js": "/random-beer/service-worker.js",
+    "static/css/main.eb40cd2e.chunk.css.map": "/random-beer/static/css/main.eb40cd2e.chunk.css.map",
+    "static/js/2.56dfac82.chunk.js.LICENSE.txt": "/random-beer/static/js/2.56dfac82.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aead2894.js",
+    "static/js/2.56dfac82.chunk.js",
+    "static/css/main.eb40cd2e.chunk.css",
+    "static/js/main.b5bc8098.chunk.js"
+  ]
+}
