@@ -9,8 +9,9 @@ Screenshot
 
 This is a tech test for Distilled.
 I had a bit of fun with this one. I spent most of my time playing with styles.
-I ended up making an odd looking beer bottle of of div tags but it was an idea I had early in the project so I wanted to stick with it.
+I ended up making an odd looking beer bottle out of div tags. It was an idea I had early in the project so I wanted to stick with it.
 I also included an animation for the card sliding in using Framer Motion.
+Originally I played an animation for the card sliding out of view when getting a new beer as well as the view zooming in and expanding "full screen" on mobile when viewing the brewery info.
 
 # Instructions
 

@@ -14,8 +14,8 @@ const BasePageStyle = styled.div`
 
 const Card = styled.div`
   position: relative;
-  width: 300px;
-  padding: 1rem 1rem 0 1rem;
+  width: 100vw;
+  padding: 1rem;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 10px;
@@ -71,7 +71,9 @@ export default function BreweryPage({ brewery, fetchCallback }) {
           <img src={imgURL} alt="logo-pic" />
         </div>
         <h4>About</h4>
-        <p>{brewery.description}</p>
+        <p style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
+          {brewery.description}
+        </p>
         <ExtraDetails>
           <div className="extraDetailsItem">
             <span>established</span>
