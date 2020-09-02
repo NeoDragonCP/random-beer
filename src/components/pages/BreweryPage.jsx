@@ -106,7 +106,12 @@ export default function BreweryPage({ brewery, fetchCallback }) {
           )}
         </ExtraDetails>
         <p>
-          <i className="fas fa-globe"></i> <span>{brewery.website}</span>
+          <i className="fas fa-globe"></i>{" "}
+          <span>
+            <a href={brewery.website} target="_blank" rel="noopener noreferrer">
+              {brewery.website}
+            </a>
+          </span>
         </p>
       </Card>
       <Link to="/">
