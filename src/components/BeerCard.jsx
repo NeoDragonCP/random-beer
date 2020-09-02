@@ -106,7 +106,6 @@ export default function BeerCard({
   category,
   error,
   handleClick,
-  history,
 }) {
   const [showDescription, setShowDescription] = useState(false);
 

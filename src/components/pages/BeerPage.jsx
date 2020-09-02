@@ -12,7 +12,6 @@ export default function BeerPage({
   handleClickNewBeer,
   handleShowMoreInfo,
   error,
-  history,
 }) {
   useEffect(() => {
     fetchCallback();
@@ -52,7 +51,6 @@ export default function BeerPage({
             category={category}
             handleClick={handleShowMoreInfo}
             error={error}
-            history={history}
           />
         </React.Fragment>
       )}

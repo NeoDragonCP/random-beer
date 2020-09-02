@@ -1,12 +1,7 @@
 import React, { useState, useCallback } from "react";
 import "./App.css"; /* Generic styling */
 import axios from "axios";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // * * *
 // Pages
@@ -57,28 +52,13 @@ function App() {
   const [breweryPageData, setBreweryPageData] = useState({});
   const [category, setCategory] = useState("");
 
-  const history = useHistory();
+  const [beerID, setBeerID] = useState("");
 
-  const fetchBeerData = useCallback(async () => {
-    setIsLoading(true);
-    setErrorFetching(false); // reset any errors
-
-    // First, get a random beer
+  const fetchBeerWithID = useCallback(async (bID) => {
     try {
-      const reqRandom = await axios.get(
-        appendURLWithCors(createStringForRandomBeer())
-      );
-      //console.log(reqRandom.data.data);
-
-      const beerID = reqRandom.data.data.id;
-
-      //console.log(reqRandom.data.data.breweries);
-      setBrewery(reqRandom.data.data.breweries[0]);
-      setCategory(reqRandom.data.data.style.category.name);
-
       // Get the full beer details using the ID
       const reqBeer = await axios.get(
-        appendURLWithCors(createStringForBeerWithID(beerID))
+        appendURLWithCors(createStringForBeerWithID(bID))
       );
 
       const data = reqBeer.data.data;
@@ -93,6 +73,39 @@ function App() {
       console.error(error);
     }
   }, []);
+
+  const fetchRandomBeer = useCallback(async () => {
+    setIsLoading(true);
+    setErrorFetching(false); // reset any errors
+
+    try {
+      const reqRandom = await axios.get(
+        appendURLWithCors(createStringForRandomBeer())
+      );
+
+      let localBeerID = reqRandom.data.data.id;
+      setBeerID(localBeerID);
+      setBrewery(reqRandom.data.data.breweries[0]);
+      setCategory(reqRandom.data.data.style.category.name);
+
+      fetchBeerWithID(localBeerID);
+    } catch (error) {
+      setErrorFetching(true);
+      setIsLoading(false);
+
+      console.error(error);
+    }
+  }, [fetchBeerWithID]);
+
+  const fetchBeerData = useCallback(() => {
+    if (beerID.length >= 2) {
+      // specific
+      fetchBeerWithID(beerID);
+    } else {
+      // random
+      fetchRandomBeer();
+    }
+  }, [beerID, fetchRandomBeer, fetchBeerWithID]);
 
   const fetchBreweryData = useCallback(async () => {
     //setIsLoading(true);
@@ -117,7 +130,7 @@ function App() {
 
   function handleClickNewBeer() {
     // Get the random beer
-    fetchBeerData();
+    fetchRandomBeer();
   }
 
   function handleClickShowBrewery() {
@@ -125,7 +138,7 @@ function App() {
   }
 
   return (
-    <Router history={history}>
+    <Router>
       <div className="App">
         <Header>
           <h2>The Random Beer App</h2>
@@ -141,7 +154,6 @@ function App() {
             }
           />
           <Route
-            exact
             path="/"
             children={
               <BeerPage
@@ -154,7 +166,6 @@ function App() {
                 handleClickNewBeer={handleClickNewBeer}
                 handleShowMoreInfo={handleClickShowBrewery}
                 error={errorFetching}
-                history={history}
               />
             }
           />
