@@ -1,6 +1,6 @@
 ## The Random Beer App
 
-CodeSandbox link: https://codesandbox.io/s/spring-bush-z6v04
+CodeSandbox link: https://codesandbox.io/s/the-random-beer-app-k504g?file=/src/App.js
 
 ![Screenshot](screenshot.png)
 Screenshot
