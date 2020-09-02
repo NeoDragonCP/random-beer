@@ -42,6 +42,7 @@ const Card = styled.div`
   img {
     width: 100%;
     height: 200px;
+    margin: 1rem 0 1rem 0;
   }
 
   /* Medium/Larger screens */
