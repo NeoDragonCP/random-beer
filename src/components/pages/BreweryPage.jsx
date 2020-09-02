@@ -79,7 +79,7 @@ export default function BreweryPage({ brewery, fetchCallback }) {
         </p>
         <ExtraDetails>
           <div className="extraDetailsItem">
-            <span>established</span>
+            <span>Established</span>
             {brewery.established}
           </div>
           {stillOperating === true ? (
