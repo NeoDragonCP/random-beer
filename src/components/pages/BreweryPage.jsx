@@ -55,6 +55,8 @@ export default function BreweryPage({ brewery, fetchCallback }) {
     fetchCallback();
   }, [fetchCallback]);
 
+  console.log(brewery);
+
   const stillOperating = brewery.isInBusiness === "Y" ? true : false;
   const isVerified = brewery.isVerified === "Y" ? true : false;
 
@@ -102,6 +104,9 @@ export default function BreweryPage({ brewery, fetchCallback }) {
             </div>
           )}
         </ExtraDetails>
+        <p>
+          <i className="fas fa-globe"></i> <span>{brewery.website}</span>
+        </p>
       </Card>
       <Link to="/">
         <Button>

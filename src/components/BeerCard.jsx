@@ -85,7 +85,6 @@ const BeerDetails = styled.div`
   }
 
   .brewery {
-    margin-top: 0.8rem;
     margin-bottom: 0.3rem;
     > span {
       margin-left: 2px;
